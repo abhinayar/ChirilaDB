@@ -383,7 +383,7 @@ $.noConflict;
 $(document).ready(function(){    
     //Logo link 
     $(".sidebar .top-left").click(function() {
-        window.location.href = '../index.html'; });
+        window.location.href = 'ChirilaDB/index.html'; });
     
     //Get the CSV data
     $.ajax({
