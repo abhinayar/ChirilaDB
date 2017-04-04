@@ -1,0 +1,7 @@
+Common:
+-Chirila DB logo:
+The CHIRILA echidna was designed by Yale’s STC Studios.
+The logo was edited and font changed by Abhi Nayar, 2017
+Index:
+-Header image:
+http://www.abc.net.au/indigenous/map/images/asp_languages_map_large_151126.png
