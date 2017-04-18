@@ -85,6 +85,10 @@ h1, h1 a {
     margin-top: 15px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Chirila Template Styles */
 /* Page Layout */
 .sidebar, .body {
@@ -201,6 +205,7 @@ h1, h1 a {
     padding-top: 60px;
     max-width: 1140px;
     margin: 0 auto;
+    padding-bottom: 120px;
 }
 .page-body-content .section {
     margin-bottom: 45px;
@@ -355,23 +360,23 @@ h1, h1 a {
     color: #337ab7;
 }
 
-#lang-word-table .search {
+#languages-sub .search {
     width: 40%;
     font-family: 'Roboto Slab';
     font-size: 16px;
     height: 40px;
     margin-bottom: 15px;
-} #lang-word-table .search:placeholder-shown {
+} #languages-sub .search:placeholder-shown {
     padding-left: 10px;
 }
 
-#lang-word-table .sort-wrapper {
+#languages-sub .sort-wrapper {
     display: inline-block;
     float: right;
     margin-right: 2px;
 }
 
-#lang-word-table .sort {
+#languages-sub .sort {
     width: auto;
     height: 40px;
     padding-left: 15px;
@@ -383,12 +388,12 @@ h1, h1 a {
     background: #AA4F39;
     color: #fff;
     border: none;
-} #lang-word-table .sort:hover {
+} #languages-sub .sort:hover {
     background: #802915;
     cursor: pointer;
 }
 
-#lang-word-table .sort:first-of-type {
+#languages-sub .sort:first-of-type {
     margin-left: 10px;
 }
 
@@ -689,4 +694,22 @@ h1, h1 a {
     margin-top: 20px;
 } #download .download-form #submit:hover {
     background: #802915;
+}
+
+.loading-content:before, .loading-content:after {
+  clear: both;
+}
+.loading-content {
+  display: block;
+  text-align: center;
+  min-width: 720px;
+  opacity: 0.6;
+}
+.loading-content.top {
+  margin-top: 75px;
+}
+.loading-content .text {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 25px;
 }
