@@ -380,6 +380,9 @@ var isDataLoaded = false;
 
 $.noConflict;
 $(document).ready(function(){
+  //global page title
+  var originalPageTitle = $("title").text();
+  
   //Hacky function for routing...
   //We are MUCH better off using some sort of framework, but again for extensibility reasons keeping this in for v0.1. Further versions will implement true routing.
   function routePage(url) {
@@ -395,6 +398,8 @@ $(document).ready(function(){
       getData(page);
     } else {
       //else we want to actually GET data
+      //Change page title and fetch.
+      addLoadingPageTitle();
       getData(page);
     }
   } routePage(window.location.pathname);
@@ -413,7 +418,7 @@ Since this is structured data the best bet might be a MySQL datatable and a RAIL
 TODO: Change the way data storage is implemented
 TODO: Figure out PersistJS alternative to storing data locally without exceeding localStorage limits
 */
-function getData(page) {
+function getData(page) {  
   var subGlobalData = null;
   console.log("here1");
   //We're going to spoof live CSV loads using Firebase as a temporary solution
@@ -454,6 +459,7 @@ function setGlobalData(data, page) {
   _globalData = data;
   isDataLoaded = true;
   removeLoadingRevealLoaded();
+  removeLoadingPageTitle();
   routePageHelper(page, _globalData);
 }
 
@@ -624,6 +630,14 @@ function removeLoadingRevealLoaded() {
   $(".loading-content").addClass("hidden");
   $(".loaded-content").removeClass("hidden");
 };
+
+//Page title functions
+function addLoadingPageTitle() {
+  $("title").text("Loading...");
+}
+function removeLoadingPageTitle() {
+  $("title").text(title);
+}
 
 //Language Subpage Function
 function preprocessLandingSub() {
